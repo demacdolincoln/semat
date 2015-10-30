@@ -1,15 +1,17 @@
+# -*- coding: utf-8 -*-
+
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
 
 
-def G(x):
-    return np.sin(x)**np.pi
+def H(x):
+    return np.log10(x) * (np.sin(x) ** x)
 
 
 amostra = np.linspace(0, 200, num=1000)
 
-serie = pd.Series([G(i) for i in amostra])
+serie = pd.Series([H(i) for i in amostra])
 serie.plot()
 
 plt.show()
